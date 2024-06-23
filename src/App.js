@@ -5,6 +5,11 @@ import React, { useState } from "react";
 
 function App() {
     const [active, setActive] = useState(-1);
+    const [animate, setAnimate] = useState(true);
+
+    function updateAnimate(bool) {
+        setAnimate(bool);
+    }
 
     function updateActive(id) {
         setActive(id);
@@ -12,7 +17,7 @@ function App() {
 
     return (
         <>
-            <Video active={active}/>
+            <Video active={active} animate={animate} updateAnimate={updateAnimate}/>
             <Nav />
             <Content active={active} updateActive={updateActive}/>
         </>

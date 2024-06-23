@@ -23,8 +23,23 @@ const Video = (props) => {
 
     return (
         <>
+            {(props.active === 1)&& (
+                <div className="video-animation"/>
+            )}
+            {(props.active === 2)&& (
+                <div className="video-animation"/>
+            )}
+            {(props.active === 3)&& (
+                <div className="video-animation"/>
+            )}
+            {(props.active === 4)&& (
+                <div className="video-animation"/>
+            )}
+            {(props.active === 5)&& (
+                <div className="video-animation"/>
+            )}
             <video className="video-slide" src={handleVideo()} autoPlay muted loop></video>
-            <div className={ props.active === 1 || props.active === 4 ? "tint-dark" : "tint"}/>
+            <div className={ props.active === 1 || props.active === 4 || props.active === -1 ? "tint-dark" : "tint"}/>
         </>
     );
 }
