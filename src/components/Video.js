@@ -17,7 +17,7 @@ const Video = (props) => {
         else if (props.active === 5) {
             return "/static/media/road.mp4";
         } else {
-            return "/static/media/waves.mp4";
+            return "/static/media/surfing.mp4";
         }
     }
 
