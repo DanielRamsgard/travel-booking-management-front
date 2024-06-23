@@ -1,12 +1,12 @@
 import React from "react";
 
-const Content = () => {
+const Content = (props) => {
 
     return (
         <> 
             <div className="content-container">
                 <div className="content-container-2">
-                    <div>
+                    <div className="over">
                     <div className="card-title"> Wonderful. <br /> <span> Islands </span> </div>
                     <div className="card-book">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
@@ -37,11 +37,11 @@ const Content = () => {
                     </div>
                     </div>
                     <div className="slider-nav">
-                        <div className="slider-btn"></div>
-                        <div className="slider-btn"></div>
-                        <div className="slider-btn"></div>
-                        <div className="slider-btn"></div>
-                        <div className="slider-btn"></div>
+                        <div className={ props.active === 1 ? "active" : "slider-btn"} onClick={() => {props.updateActive(1)}}></div>
+                        <div className={ props.active === 2 ? "active" : "slider-btn"} onClick={() => {props.updateActive(2)}}></div>
+                        <div className={ props.active === 3 ? "active" : "slider-btn"} onClick={() => {props.updateActive(3)}}></div>
+                        <div className={ props.active === 4 ? "active" : "slider-btn"} onClick={() => {props.updateActive(4)}}></div>
+                        <div className={ props.active === 5 ? "active" : "slider-btn"} onClick={() => {props.updateActive(5)}}></div>
                     </div>
                 </div>
             </div>
