@@ -226,7 +226,7 @@ span {
 }
 
 .active {
-   background-color: black; 
+   background-color: rgb(150,150,150); 
    transition: .3s ease;
-   box-shadow: 0 0 2px rgba(0,0,0,.5);
+   box-shadow: 0 0 2px rgba(150,150,150,.5);
 }
