@@ -123,6 +123,12 @@ span {
     font-size: large;
     font-weight: 700;
     border-radius: 4px;
+    cursor: pointer;
+    transition: .7s ease;
+}
+
+.card-book:hover {
+    transform: scale(1.02);
 }
 
 .card-fab-container {
@@ -131,12 +137,12 @@ span {
     justify-self: start;
     column-gap: 20px;
     align-items: center;
-    cursor: pointer;
 }
 
 .fab-item {
     color: var(--text-color);
     transition: .3s ease;
+    cursor: pointer;
 }
 
 .fab-item:hover {
