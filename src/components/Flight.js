@@ -1,13 +1,14 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Nav from "./Nav";
 import useWindowWidth from "./useWindowWidth";
 import $ from 'jquery';
 import 'bootstrap-datepicker';
+import CustomCarousel from "./CustomCarousel";
 
 const Flight = () => {
+    const [from, setFrom] = useState("");
     const widthBool = useWindowWidth(900);
     const widthBoolTitle = useWindowWidth(372);
-
     const departureRef = useRef(null);
     const returnRef = useRef(null);
     const departureNewRef = useRef(null);
@@ -91,7 +92,7 @@ const Flight = () => {
                 </div>
                 : 
                 <div className="flight-action-container">
-                    <input className="from" placeholder="From">
+                    <input className="from" placeholder="From" onChange={(e) => {setFrom(e.target.value)}}>
 
                     </input>
                     <input className="middle" placeholder="To">
@@ -111,6 +112,16 @@ const Flight = () => {
                     </div>
                 </div>
                 }
+
+                <div className="popular">
+                    <div className="title-pop">
+                        Popular Destinations
+                    </div>
+                    <div className="sub-title-pop">
+                        from {from}
+                    </div>
+                    <CustomCarousel />
+                </div>
             </div>
         </>
     );
