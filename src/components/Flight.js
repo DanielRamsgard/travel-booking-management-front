@@ -15,8 +15,25 @@ const Flight = () => {
                 <div className="flight-subtitle">
                     Helping you save on flights since 2007
                 </div>
-                <div className="flight-action">
+                <div className="flight-action-container">
+                    <div className="from">
 
+                    </div>
+                    <div className="middle">
+
+                    </div>
+                    <div className="middle">
+
+                    </div>
+                    <div className="middle">
+
+                    </div>
+                    <div className="num-people">
+
+                    </div>
+                    <div className="search-flights">
+                        Search flights
+                    </div>
                 </div>
             </div>
         </>
