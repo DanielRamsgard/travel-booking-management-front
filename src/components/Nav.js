@@ -1,10 +1,8 @@
 import React, { useState }  from "react";
 import useWindowWidth from "./useWindowWidth";
 import NavPage from "./NavPage";
-import { useNavigate } from 'react-router-dom';
 
 const Nav = () => {
-    const navigate = useNavigate();
     const widthBool = useWindowWidth(700);
     const [nav, setNav] = useState(false);
 

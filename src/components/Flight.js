@@ -5,7 +5,9 @@ const Flight = () => {
     return (
         <>
             <Nav />
-            <img className="img-container" src="/static/media/airport.jpeg"></img>
+            <div className="airport-container">
+                <img alt="Airport" className="img-container" src="/static/media/airport.jpeg"></img>
+            </div>
         </>
     );
 }
