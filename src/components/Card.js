@@ -6,13 +6,13 @@ const Card = (props) => {
             
             <div className="card-container">
                 <div className="card-img-container">
-                    <img className="card-img" src="/static/media/ams.jpg"></img>
+                    <img alt="Card" className="card-img" src="/static/media/ams.jpg"></img>
                 </div>
                 <div className="card-title">
                     Amsterdam
                 </div>
                 <div className="card-price">
-                     from $718
+                    from $718
                 </div>
             </div>
 

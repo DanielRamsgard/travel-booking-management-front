@@ -19,7 +19,8 @@ body {
 }
 
 .nav-container {
-    position: absolute;
+    z-index: 1400;
+    position: fixed;
     top: 0%;
     left: 0%;
     width: 100%;
@@ -182,8 +183,8 @@ body {
     background-color: white;
     width: 100%;
     height: 100vh;
-    z-index: 1000;
-    position: absolute;
+    z-index: 1500;
+    position: fixed;
 }
 
 .navpage-text {
@@ -273,20 +274,24 @@ body {
     height: 100%;
 }
 
-.airport-container {
+.airport-container-new, .airport-container {
     z-index: -2;
     width: 100%;
-    height: 100vh;
+    height: 700px;
     overflow: hidden;
 }
 
-.flight-content-container {
+.airport-container-new {
+    height: 825px;
+}
+
+.flight-content-container-new, .flight-content-container {
     z-index: 0;
     position: absolute;
     top: 65px;
     left: 0%;
     width: 100%;
-    height: calc(100vh - 65px);
+    height: 635px;
     background-color: rgba(0,0,0,.4);
     display: flex;
     flex-direction: column;
@@ -295,12 +300,20 @@ body {
     row-gap: 15px;
 }
 
-.flight-title {
+.flight-content-container-new {
+    height: 760px;
+}
+
+.flight-title-new, .flight-title {
     text-align: center;
     padding-top: 30px;
     font-size: 50px;
     font-weight: 800;
     color: white;
+}
+
+.flight-title-new {
+    font-size: 40px;
 }
 
 .flight-subtitle {

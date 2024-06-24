@@ -56,11 +56,11 @@ const Flight = () => {
     return (
         <>
             <Nav />
-            <div className="airport-container">
+            <div className={widthBool ? "airport-container-new" : "airport-container"}>
                 <img alt="Airport" className="img-container" src="/static/media/airport.jpeg"></img>
             </div>
-            <div className="flight-content-container">
-                <div className="flight-title">
+            <div className={ widthBool ? "flight-content-container-new" : "flight-content-container"}>
+                <div className={ widthBool ? "flight-title-new" : "flight-title"}>
                     { widthBool ?  widthBoolTitle ? "Flights" : "Search Flights" : "Search Cheap Flight Tickets"}
                 </div>
                 <div className="flight-subtitle">
@@ -68,7 +68,7 @@ const Flight = () => {
                 </div>
                 { widthBool ? 
                 <div className="flight-action-container-new">
-                    <input className="from-new" placeholder="From">
+                    <input className="from-new" placeholder="From" onChange={(e) => {setFrom(e.target.value)}}>
 
                     </input>
                     <input className="to-new" placeholder="To">
