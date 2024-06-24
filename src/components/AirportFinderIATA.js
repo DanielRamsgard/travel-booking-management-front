@@ -1,7 +1,7 @@
 // src/components/AirportFinder.js
 import React, { useState, useEffect } from "react";
 
-const AirportFinder = () => {
+const AirportFinder = (props) => {
     const [query, setQuery] = useState('');
     const [airports, setAirports] = useState([]);
     const [filteredAirports, setFilteredAirports] = useState([]);
@@ -41,15 +41,15 @@ const AirportFinder = () => {
         <>
             <input
                 type="text"
-                className="from"
+                className={props.class}
                 value={query}
                 onChange={e => {setQuery(e.target.value); setShow(true)}}
-                placeholder="From"
+                placeholder={props.hint}
             />
-            {filteredAirports.length !== 0 && show ? <ul className={filteredAirports.length > 8 ? "dropdown-new" : "dropdown-new-new"}>
+            {filteredAirports.length !== 0 && show ? <ul className={filteredAirports.length > 8 ? (props.widthBool ? "dropdown-new-phone" : "dropdown-new") : (props.widthBool ? "dropdown-new-new-phone" : "dropdown-new-new")}>
                 {filteredAirports.map((airport, index) => (
                     <>  
-                        <div className="airport-item" key={index} onClick={() => {setQuery(airport.iata); setShow(false)}}>
+                        <div className="airport-item" key={index} onClick={() => {setQuery(airport.iata); setShow(false); props.updateFrom(airport.iata)}}>
                             {filterAirportWord(airport.name) }{(index + 1 !== filteredAirports.length)? <div className="bar-new"></div> : <></>}
                         </div>
                         

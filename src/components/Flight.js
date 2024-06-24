@@ -15,7 +15,11 @@ const Flight = () => {
     const departureNewRef = useRef(null);
     const returnNewRef = useRef(null);
 
-  useEffect(() => {
+    function updateFrom(from) {
+        setFrom(from);
+    }
+
+    useEffect(() => {
     $(departureRef.current).datepicker({
       format: 'mm/dd/yyyy',
       orientation: "bottom auto",
@@ -69,12 +73,8 @@ const Flight = () => {
                 </div>
                 { widthBool ? 
                 <div className="flight-action-container-new">
-                    <input className="from-new" placeholder="From" onChange={(e) => {setFrom(e.target.value)}}>
-
-                    </input>
-                    <input className="to-new" placeholder="To">
-
-                    </input>
+                    <AirportFinder updateFrom={updateFrom} hint={"From"} class={"from-new"} widthBool={widthBool}/>
+                    <AirportFinder updateFrom={updateFrom} hint={"To"} class={"to-new"} widthBool={widthBool}/>
                     <div className="middle-new-container">
                         <input className="middle-item" placeholder="Departure" id="departure-new" ref={departureNewRef}>
 
@@ -93,10 +93,8 @@ const Flight = () => {
                 </div>
                 : 
                 <div className="flight-action-container">
-                    <AirportFinder />
-                    <input className="middle" placeholder="To">
-
-                    </input>
+                    <AirportFinder updateFrom={updateFrom} hint={"From"} class={"from"} widthBool={widthBool}/>
+                    <AirportFinder updateFrom={updateFrom} hint={"To"} class={"middle"} widthBool={widthBool}/>
                     <input className="middle" placeholder="Departure" id="departure" ref={departureRef}>
 
                     </input>
