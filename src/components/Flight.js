@@ -1,10 +1,33 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import Nav from "./Nav";
 import useWindowWidth from "./useWindowWidth";
+import $ from 'jquery';
+import 'bootstrap-datepicker';
 
 const Flight = () => {
     const widthBool = useWindowWidth(900);
     const widthBoolTitle = useWindowWidth(372);
+
+    const departureRef = useRef(null);
+    const returnRef = useRef(null);
+
+  useEffect(() => {
+    $(departureRef.current).datepicker({
+      format: 'mm/dd/yyyy',
+      orientation: "bottom auto" 
+    });
+
+    $(returnRef.current).datepicker({
+        format: 'mm/dd/yyyy',
+        orientation: "bottom auto"
+      });
+
+    // Cleanup on component unmount
+    return () => {
+      $(departureRef.current).datepicker('destroy');
+      $(returnRef.current).datepicker('destroy');
+    };
+  }, []);
 
     return (
         <>
@@ -45,21 +68,21 @@ const Flight = () => {
                 </div>
                 : 
                 <div className="flight-action-container">
-                    <div className="from">
+                    <input className="from" placeholder="From">
 
-                    </div>
-                    <div className="middle">
+                    </input>
+                    <input className="middle" placeholder="To">
 
-                    </div>
-                    <div className="middle">
+                    </input>
+                    <input className="middle" placeholder="Departure" id="departure" ref={departureRef}>
 
-                    </div>
-                    <div className="middle">
+                    </input>
+                    <input className="middle" placeholder="Return" id="return" ref={returnRef}>
 
-                    </div>
-                    <div className="num-people">
+                    </input>
+                    <input className="num-people" placeholder="Passengers">
 
-                    </div>
+                    </input>
                     <div className="search-flights">
                         Search flights
                     </div>
