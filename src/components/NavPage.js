@@ -12,21 +12,21 @@ const NavPage = (props) => {
                 </div>
             </div>
             <div className="navpage-container">
-                <div className="navpage-text">
+                <a href="/" className="navpage-text" onClick={() => {props.updateNav(false)}}>
                     Home
-                </div>
-                <div className="navpage-text">
+                </a>
+                <a href="/flight"className="navpage-text" onClick={() => {props.updateNav(false)}}>
                     Flights
-                </div>
-                <div className="navpage-text">
+                </a>
+                <a href="/hotel" className="navpage-text" onClick={() => {props.updateNav(false)}}>
                     Hotels
-                </div>
-                <div className="navpage-text">
+                </a>
+                <a href="/about" className="navpage-text" onClick={() => {props.updateNav(false)}}>
                     About
-                </div>
-                <div className="navpage-text">
+                </a>
+                <a href="/contact" className="navpage-text" onClick={() => {props.updateNav(false)}}>
                     Contact
-                </div>
+                </a>
             </div>
         </div>
     );
