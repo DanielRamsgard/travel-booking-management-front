@@ -7,6 +7,12 @@ const AirportFinder = (props) => {
     const [filteredAirports, setFilteredAirports] = useState([]);
     const [show, setShow] = useState(false);
 
+    const checkUpdate = (airport) => {
+        if (props.bool) {
+            props.updateFrom(airport.iata)
+        }
+    }
+
     useEffect(() => {
         // Load the JSON data once when the component mounts
         fetch('/static/json/airports.json')
@@ -49,7 +55,7 @@ const AirportFinder = (props) => {
             {filteredAirports.length !== 0 && show ? <ul className={filteredAirports.length > 8 ? (props.widthBool ? "dropdown-new-phone" : "dropdown-new") : (props.widthBool ? "dropdown-new-new-phone" : "dropdown-new-new")}>
                 {filteredAirports.map((airport, index) => (
                     <>  
-                        <div className="airport-item" key={index} onClick={() => {setQuery(airport.iata); setShow(false); props.updateFrom(airport.iata)}}>
+                        <div className="airport-item" key={index} onClick={() => {setQuery(airport.iata); setShow(false); checkUpdate(airport)}}>
                             {filterAirportWord(airport.name) }{(index + 1 !== filteredAirports.length)? <div className="bar-new"></div> : <></>}
                         </div>
                         

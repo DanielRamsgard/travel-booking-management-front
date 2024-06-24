@@ -73,8 +73,8 @@ const Flight = () => {
                 </div>
                 { widthBool ? 
                 <div className="flight-action-container-new">
-                    <AirportFinder updateFrom={updateFrom} hint={"From"} class={"from-new"} widthBool={widthBool}/>
-                    <AirportFinder updateFrom={updateFrom} hint={"To"} class={"to-new"} widthBool={widthBool}/>
+                    <AirportFinder updateFrom={updateFrom} bool={true} hint={"From"} class={"from-new"} widthBool={widthBool}/>
+                    <AirportFinder updateFrom={updateFrom} bool={false} hint={"To"} class={"to-new"} widthBool={widthBool}/>
                     <div className="middle-new-container">
                         <input className="middle-item" placeholder="Departure" id="departure-new" ref={departureNewRef}>
 
@@ -93,8 +93,8 @@ const Flight = () => {
                 </div>
                 : 
                 <div className="flight-action-container">
-                    <AirportFinder updateFrom={updateFrom} hint={"From"} class={"from"} widthBool={widthBool}/>
-                    <AirportFinder updateFrom={updateFrom} hint={"To"} class={"middle"} widthBool={widthBool}/>
+                    <AirportFinder updateFrom={updateFrom} bool={true} hint={"From"} class={"from"} widthBool={widthBool}/>
+                    <AirportFinder updateFrom={updateFrom} bool={false} hint={"To"} class={"middle"} widthBool={widthBool}/>
                     <input className="middle" placeholder="Departure" id="departure" ref={departureRef}>
 
                     </input>

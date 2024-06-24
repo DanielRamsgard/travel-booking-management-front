@@ -4,10 +4,8 @@ import AirportFinder from "./AirportFinderIATA";
 
 const Hotel = () => {
     return (
-        <>  <div className="test"></div>
+        <>
             <Nav />
-            <AirportFinder />
-            
         </>
     );
 }
