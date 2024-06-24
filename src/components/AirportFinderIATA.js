@@ -45,13 +45,13 @@ const AirportFinder = () => {
                 onChange={e => {setQuery(e.target.value); setShow(true)}}
                 placeholder="From"
             />
-            {filteredAirports.length !== 0 && show ? <ul className="dropdown">
+            {filteredAirports.length !== 0 && show ? <ul className={filteredAirports.length > 8 ? "dropdown-new" : "dropdown"}>
                 {filteredAirports.map((airport, index) => (
                     <>  
-                        {index < 8 ? <div className="airport-item" key={index} onClick={() => {setQuery(airport.iata); setShow(false)}}>
-                            {filterAirportWord(airport.name)}
-                        </div> : <></>}
-                        {(index + 1 !== filteredAirports.length)? (index < 7 ? <div className="bar-new"></div> : <></>) : <></>}
+                        {index < 19 ? <div className="airport-item" key={index} onClick={() => {setQuery(airport.iata); setShow(false)}}>
+                            {filterAirportWord(airport.name) }
+                        </div>: <></>}
+                        {(index + 1 !== filteredAirports.length)? <div className="bar-new"></div> : <></>}
                         
                     </>
                 ))}

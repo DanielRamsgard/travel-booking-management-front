@@ -538,7 +538,7 @@ input:focus {
     font-weight: 600;
 }
 
-.dropdown {
+.dropdown-new, .dropdown {
     position: absolute;
     display: flex;
     justify-content: center;
@@ -553,6 +553,13 @@ input:focus {
     padding-left: 10px;
     padding-right: 10px;
     margin-left: 0;
+}
+
+.dropdown-new {
+    justify-content: flex-start;
+    overflow: auto;
+    height: 325px;
+    width: 300px;
 }
 
 .bar-new {
