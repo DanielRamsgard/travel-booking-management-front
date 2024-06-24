@@ -4,6 +4,7 @@ import useWindowWidth from "./useWindowWidth";
 import $ from 'jquery';
 import 'bootstrap-datepicker';
 import CustomCarousel from "./CustomCarousel";
+import AirportFinder from "./AirportFinderIATA";
 
 const Flight = () => {
     const [from, setFrom] = useState("");
@@ -92,9 +93,7 @@ const Flight = () => {
                 </div>
                 : 
                 <div className="flight-action-container">
-                    <input className="from" placeholder="From" onChange={(e) => {setFrom(e.target.value)}}>
-
-                    </input>
+                    <AirportFinder />
                     <input className="middle" placeholder="To">
 
                     </input>

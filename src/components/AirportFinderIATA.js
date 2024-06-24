@@ -38,25 +38,26 @@ const AirportFinder = () => {
     };
 
     return (
-        <div className="airport-container">
+        <>
             <input
                 type="text"
+                className="from"
                 value={query}
                 onChange={e => {setQuery(e.target.value); setShow(true)}}
                 placeholder="From"
             />
-            {filteredAirports.length !== 0 && show ? <ul className={filteredAirports.length > 8 ? "dropdown-new" : "dropdown"}>
+            {filteredAirports.length !== 0 && show ? <ul className={filteredAirports.length > 8 ? "dropdown-new" : "dropdown-new-new"}>
                 {filteredAirports.map((airport, index) => (
                     <>  
-                        {index < 19 ? <div className="airport-item" key={index} onClick={() => {setQuery(airport.iata); setShow(false)}}>
-                            {filterAirportWord(airport.name) }
-                        </div>: <></>}
-                        {(index + 1 !== filteredAirports.length)? <div className="bar-new"></div> : <></>}
+                        <div className="airport-item" key={index} onClick={() => {setQuery(airport.iata); setShow(false)}}>
+                            {filterAirportWord(airport.name) }{(index + 1 !== filteredAirports.length)? <div className="bar-new"></div> : <></>}
+                        </div>
+                        
                         
                     </>
                 ))}
             </ul>: <></>}
-        </div>
+        </>
     );
 };
 
