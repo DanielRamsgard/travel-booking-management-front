@@ -113,16 +113,16 @@ const Flight = () => {
                 </div>
                 }
 
-                <div className="popular">
+                <div className={ widthBool ? "popular-new" : "popular"}>
                     <div className="title-pop">
-                        Popular Destinations
+                        { widthBool ? "Popular" : "Popular Destinations"}
                     </div>
                     <div className="sub-title-pop">
                         from {from}
                     </div>
-                    <CustomCarousel />
                 </div>
             </div>
+            <CustomCarousel />
         </>
     );
 }

@@ -444,9 +444,9 @@ input:focus {
     font-size: large;
 }
 
-.popular {
-    height: 60%;
-    margin-top: 50px;
+.popular-new, .popular {
+    height: 150px;
+    margin-top: 200px;
     width: 55%;
     background-color: white;
     border-radius: 20px 20px 0px 0px;
@@ -459,4 +459,68 @@ input:focus {
     align-items: flex-start;
     row-gap: 10px;
 
+}
+
+.popular-new {
+    width: 80%;
+    margin-top: 60px;
+}
+
+.work {
+    background-color: rgba(150,150,150,.1);
+    padding-top: 30px;
+} 
+
+.space {
+    height: 400px;
+    width: 10px;
+}
+
+.contain {
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 170px;
+    height: 250px;
+}
+
+.card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-img-container {
+    width: 170px;
+    height: 170px;
+    border-radius: 20px 20px 20px 20px;
+    overflow: hidden;
+}
+
+.card-title {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 30px;
+    text-align: left;
+    font-size: large;
+}
+
+.card-price {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 15px;
+    text-align: left;
+    font-size: large;
+    font-weight: 600;
 }

@@ -6,6 +6,9 @@ const Hotel = () => {
     return (
         <>
             <Nav />
+            <div className="space">
+                
+            </div>
             <CustomCarousel />
             
         </>
