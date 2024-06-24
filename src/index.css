@@ -94,7 +94,7 @@ body {
 }
 
 .card-title {
-    color: var(--text-color);
+    color: white;
     font-size: 50px;
     font-weight: 800;
     line-height: 65px;
@@ -355,10 +355,19 @@ input:focus {
     width: 100%;
 }
 
-.num-people-new , .middle-new-container, .to-new, .from-new {
+.middle-item, .num-people-new , .middle-new-container, .to-new, .from-new {
     width: 90%;
     height: 60px;
     background-color: white;
+    font-family: 'Poppins';
+    border: none;
+    box-sizing: border-box;
+    padding-left: 20px;
+    font-size: large;
+}
+
+.middle-new-container {
+    padding-left: 0px;
 }
 
 .from-new {
@@ -409,4 +418,14 @@ input:focus {
     text-align: center;
     padding: 8px 12px;
     font-size: 14px;
+}
+
+.card-title-new-new {
+    color: white;
+    font-size: 50px;
+    font-weight: 800;
+    line-height: 65px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
 }

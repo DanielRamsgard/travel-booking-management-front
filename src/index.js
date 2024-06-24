@@ -6,7 +6,6 @@ import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css';
 import 'bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js';
-import $ from 'jquery';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

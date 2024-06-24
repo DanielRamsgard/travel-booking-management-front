@@ -10,22 +10,45 @@ const Flight = () => {
 
     const departureRef = useRef(null);
     const returnRef = useRef(null);
+    const departureNewRef = useRef(null);
+    const returnNewRef = useRef(null);
 
   useEffect(() => {
     $(departureRef.current).datepicker({
       format: 'mm/dd/yyyy',
-      orientation: "bottom auto" 
+      orientation: "bottom auto",
+      autoclose: true
     });
 
     $(returnRef.current).datepicker({
         format: 'mm/dd/yyyy',
-        orientation: "bottom auto"
+        orientation: "bottom auto",
+        autoclose: true
       });
+
+    $(departureNewRef.current).datepicker({
+    format: 'mm/dd/yyyy',
+    orientation: "bottom auto",
+    autoclose: true
+    });
+
+    $(returnNewRef.current).datepicker({
+        format: 'mm/dd/yyyy',
+        orientation: "bottom auto",
+        autoclose: true
+    });
+
+    const departureRefCurrent = departureRef.current;
+    const returnRefCurrent = returnRef.current;
+    const departureNewRefCurrent = departureNewRef.current;
+    const returnNewRefCurrent = returnNewRef.current;
 
     // Cleanup on component unmount
     return () => {
-      $(departureRef.current).datepicker('destroy');
-      $(returnRef.current).datepicker('destroy');
+      $(departureRefCurrent).datepicker('destroy');
+      $(returnRefCurrent).datepicker('destroy');
+      $(departureNewRefCurrent).datepicker('destroy');
+      $(returnNewRefCurrent).datepicker('destroy');
     };
   }, []);
 
@@ -44,24 +67,24 @@ const Flight = () => {
                 </div>
                 { widthBool ? 
                 <div className="flight-action-container-new">
-                    <div className="from-new">
+                    <input className="from-new" placeholder="From">
 
-                    </div>
-                    <div className="to-new">
+                    </input>
+                    <input className="to-new" placeholder="To">
 
-                    </div>
+                    </input>
                     <div className="middle-new-container">
-                        <div className="middle-item">
+                        <input className="middle-item" placeholder="Departure" id="departure-new" ref={departureNewRef}>
 
-                        </div>
-                        <div className="middle-item">
+                        </input>
+                        <input className="middle-item" placeholder="Return" id="return-new" ref={returnNewRef}> 
 
-                        </div>
+                        </input>
             
                     </div>
-                    <div className="num-people-new">
+                    <input className="num-people-new" placeholder="Passengers">
 
-                    </div>
+                    </input>
                     <div className="search-flights-new">
                         Search flights
                     </div>
