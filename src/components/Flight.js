@@ -1,7 +1,11 @@
 import React from "react";
 import Nav from "./Nav";
+import useWindowWidth from "./useWindowWidth";
 
 const Flight = () => {
+    const widthBool = useWindowWidth(900);
+    const widthBoolTitle = useWindowWidth(372);
+
     return (
         <>
             <Nav />
@@ -10,11 +14,36 @@ const Flight = () => {
             </div>
             <div className="flight-content-container">
                 <div className="flight-title">
-                    Search Cheap Flight Tickets
+                    { widthBool ?  widthBoolTitle ? "Flights" : "Search Flights" : "Search Cheap Flight Tickets"}
                 </div>
                 <div className="flight-subtitle">
-                    Helping you save on flights since 2007
+                    { widthBool ?  widthBoolTitle ? "Search tickets" : "Serving customers since 2007" : "Helping you save on flights since 2007"}
                 </div>
+                { widthBool ? 
+                <div className="flight-action-container-new">
+                    <div className="from-new">
+
+                    </div>
+                    <div className="to-new">
+
+                    </div>
+                    <div className="middle-new-container">
+                        <div className="middle-item">
+
+                        </div>
+                        <div className="middle-item">
+
+                        </div>
+            
+                    </div>
+                    <div className="num-people-new">
+
+                    </div>
+                    <div className="search-flights-new">
+                        Search flights
+                    </div>
+                </div>
+                : 
                 <div className="flight-action-container">
                     <div className="from">
 
@@ -35,6 +64,7 @@ const Flight = () => {
                         Search flights
                     </div>
                 </div>
+                }
             </div>
         </>
     );

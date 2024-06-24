@@ -287,6 +287,7 @@ span {
 }
 
 .flight-title {
+    text-align: center;
     padding-top: 30px;
     font-size: 50px;
     font-weight: 800;
@@ -294,6 +295,7 @@ span {
 }
 
 .flight-subtitle {
+    text-align: center;
     font-weight: 700;
     color: white;
     font-size: large;
@@ -310,7 +312,7 @@ span {
     column-gap: 2px;
 }
 
-.search-flights, .num-people, .from, .middle {
+.search-flights-new, .search-flights, .num-people, .from, .middle {
     height: 60px;
     width: 15%;
     background-color: white;
@@ -324,7 +326,7 @@ span {
     border-radius: 0px 20px 20px 0px;
 }
 
-.search-flights {
+.search-flights-new, .search-flights {
     background-color: rgb(255,255,220);
     display: flex;
     justify-content: center;
@@ -332,4 +334,48 @@ span {
     font-weight: 400;
     border-radius: 20px 20px 20px 20px;
     margin-left: 8px;
+}
+
+.flight-action-container-new {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 2px;
+    width: 100%;
+}
+
+.num-people-new , .middle-new-container, .to-new, .from-new {
+    width: 90%;
+    height: 60px;
+    background-color: white;
+}
+
+.from-new {
+    border-radius: 20px 20px 0px 0px;
+}
+
+.num-people-new {
+    border-radius: 0px 0px 20px 20px;
+}
+
+.search-flights-new {
+    margin-top: 8px;
+    width: 90%;
+    margin-left: 0px;
+}
+
+.middle-new-container {
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    column-gap: 2px;
+}
+
+.middle-item {
+    width: calc(50% - 1px);
+    height: 60px;
+    background-color: white;
 }
