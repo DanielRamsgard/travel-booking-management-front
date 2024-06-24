@@ -16,14 +16,15 @@ body {
 
 .nav-container {
     position: absolute;
-    padding-top: 15px;
     top: 0%;
     left: 0%;
     width: 100%;
-    height: 50px;
+    height: 65px;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: white;
+    box-shadow: 0px 4px 4px rgba(0,0,0, .1);
 }
 
 .nav-container-2 {
@@ -36,8 +37,10 @@ body {
 
 .travel {
     font-weight: 700;
-    color: var(--text-color);
+    color: black;
     font-size: large;
+    cursor: pointer;
+    text-decoration: none;
 }
 
 .nav-container-3 {
@@ -47,16 +50,11 @@ body {
     column-gap: 40px;
 }
 
-.test {
-    height: 1080px;
-    width: 100%;
-}
-
 .nav-text {
     text-decoration: none;
     position: relative;
     font-weight: 400;
-    color: var(--text-color);
+    color: black;
     transition: .3s ease;
     width: 100%;
 }
@@ -257,4 +255,10 @@ span {
         border-radius: 0%; /* End with full border radius (circle) */
         opacity: 0; /* Fully transparent */
     }
+}
+
+.img-container {
+    object-fit: cover;
+    width: 100%;
+    height: 100vh;
 }
