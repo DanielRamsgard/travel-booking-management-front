@@ -14,6 +14,24 @@ const Flight = () => {
     const returnRef = useRef(null);
     const departureNewRef = useRef(null);
     const returnNewRef = useRef(null);
+    const [url, setUrl] = useState({
+        from : "",
+        to : "",
+        departure : "",
+        returnVal : "",
+        passengers : ""
+        
+    });
+
+    function updateUrl(from, to, departure, returnVal, passengers) {
+        setUrl(prevUrl => ({
+            from: from || prevUrl.from,
+            to: to || prevUrl.to,
+            departure: departure || prevUrl.departure,
+            returnVal: returnVal || prevUrl.returnVal,
+            passengers: passengers || prevUrl.passengers
+        }));
+    }
 
     function updateFrom(from) {
         setFrom(from);
@@ -24,24 +42,32 @@ const Flight = () => {
       format: 'mm/dd/yyyy',
       orientation: "bottom auto",
       autoclose: true
+    }).on('changeDate', function (e) {
+        updateUrl("", "", e.format(), "", "");
     });
 
     $(returnRef.current).datepicker({
         format: 'mm/dd/yyyy',
         orientation: "bottom auto",
         autoclose: true
-      });
+      }).on('changeDate', function (e) {
+        updateUrl("", "", "", e.format(), "");
+    });
 
     $(departureNewRef.current).datepicker({
     format: 'mm/dd/yyyy',
     orientation: "bottom auto",
     autoclose: true
+    }).on('changeDate', function (e) {
+        updateUrl("", "", e.format(), "", "");
     });
 
     $(returnNewRef.current).datepicker({
         format: 'mm/dd/yyyy',
         orientation: "bottom auto",
         autoclose: true
+    }).on('changeDate', function (e) {
+        updateUrl("", "", "", e.format(), "");
     });
 
     const departureRefCurrent = departureRef.current;
@@ -77,14 +103,14 @@ const Flight = () => {
                     <AirportFinder updateFrom={updateFrom} bool={false} hint={"To"} class={"to-new"} widthBool={widthBool}/>
                     <div className="middle-new-container">
                         <input className="middle-item" placeholder="Departure" id="departure-new" ref={departureNewRef}>
-
+                        {console.log(url)}
                         </input>
                         <input className="middle-item" placeholder="Return" id="return-new" ref={returnNewRef}> 
 
                         </input>
             
                     </div>
-                    <input className="num-people-new" placeholder="Passengers">
+                    <input className="num-people-new" placeholder="Passengers" onChange={(e) => {updateUrl("","","","",e.target.value)}}>
 
                     </input>
                     <div className="search-flights-new">
@@ -93,15 +119,15 @@ const Flight = () => {
                 </div>
                 : 
                 <div className="flight-action-container">
-                    <AirportFinder updateFrom={updateFrom} bool={true} hint={"From"} class={"from"} widthBool={widthBool}/>
-                    <AirportFinder updateFrom={updateFrom} bool={false} hint={"To"} class={"middle"} widthBool={widthBool}/>
+                    <AirportFinder updateUrl={updateUrl} updateFrom={updateFrom} bool={true} hint={"From"} class={"from"} widthBool={widthBool}/>
+                    <AirportFinder updateUrl={updateUrl} updateFrom={updateFrom} bool={false} hint={"To"} class={"middle"} widthBool={widthBool}/>
                     <input className="middle" placeholder="Departure" id="departure" ref={departureRef}>
-
+                        {console.log(url)}
                     </input>
                     <input className="middle" placeholder="Return" id="return" ref={returnRef}>
 
                     </input>
-                    <input className="num-people" placeholder="Passengers">
+                    <input className="num-people" placeholder="Passengers" onChange={(e) => {updateUrl("","","","",e.target.value)}}>
 
                     </input>
                     <div className="search-flights">

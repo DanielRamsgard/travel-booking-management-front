@@ -99,7 +99,7 @@ const CustomCarousel = () => {
             <div className="work">
                 <Carousel responsive={responsive} infinite={true} itemClass="contain">
                     {places.map((item) => (
-                        <Card img={item.img} city={item.city} country={item.country}/>
+                        <Card key={item.city} img={item.img} city={item.city} country={item.country}/>
                     ))}
                 </Carousel>
             </div>

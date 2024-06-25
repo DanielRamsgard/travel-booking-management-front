@@ -11,8 +11,8 @@ const AirportFinder = (props) => {
 
     const checkUpdate = (airport) => {
         if (props.bool) {
-            props.updateFrom(airport.iata)
-        }
+            props.updateFrom(airport.iata);
+        } 
     }
 
     useEffect(() => {
@@ -24,6 +24,11 @@ const AirportFinder = (props) => {
     }, []);
 
     useEffect(() => {
+        if (props.bool) {
+            props.updateUrl(query,"","","","");
+        } else {
+            props.updateUrl("",query,"","","");
+        }
         // Query the data locally
         if (query.length > 2) {
             const results = airports.filter(airport => {
