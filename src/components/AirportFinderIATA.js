@@ -43,6 +43,7 @@ const AirportFinder = (props) => {
         } else {
             setFilteredAirports([]);
         }
+    // eslint-disable-next-line
     }, [query, airports]);
 
     const filterAirportWord = (str) => {

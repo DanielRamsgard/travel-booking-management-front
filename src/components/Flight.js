@@ -27,8 +27,8 @@ const Flight = () => {
         setUrl(prevUrl => ({
             from: from || prevUrl.from,
             to: to || prevUrl.to,
-            departure: departure || prevUrl.departure,
-            returnVal: returnVal || prevUrl.returnVal,
+            departure: (departure === "" ? "" : departure.split('/')[0] + departure.split('/')[1]) || prevUrl.departure,
+            returnVal: (returnVal === "" ? "" : returnVal.split('/')[0] + returnVal.split('/')[1]) || prevUrl.returnVal,
             passengers: passengers || prevUrl.passengers
         }));
     }
@@ -99,8 +99,8 @@ const Flight = () => {
                 </div>
                 { widthBool ? 
                 <div className="flight-action-container-new">
-                    <AirportFinder updateFrom={updateFrom} bool={true} hint={"From"} class={"from-new"} widthBool={widthBool}/>
-                    <AirportFinder updateFrom={updateFrom} bool={false} hint={"To"} class={"to-new"} widthBool={widthBool}/>
+                    <AirportFinder updateUrl={updateUrl} updateFrom={updateFrom} bool={true} hint={"From"} class={"from-new"} widthBool={widthBool}/>
+                    <AirportFinder updateUrl={updateUrl} updateFrom={updateFrom} bool={false} hint={"To"} class={"to-new"} widthBool={widthBool}/>
                     <div className="middle-new-container">
                         <input className="middle-item" placeholder="Departure" id="departure-new" ref={departureNewRef}>
                         {console.log(url)}
