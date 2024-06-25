@@ -23,15 +23,15 @@ const Hotel = () => {
     });
 
     const toAvia = () => {
-        const urlString = `https://www.aviasales.com/search/${url.from}${url.departure}${url.to}${url.returnVal}${url.passengers}?request_source=search_form`;
+        const urlString = `https://www.booking.com/searchresults.html?ss=${url.location}&ssne=${url.location}&aid=397594&lang=en-us&sb=1&dest_type=city&checkin=${url.departure}&checkout=${url.returnVal}&group_adults=${url.guests}&no_rooms=1&group_children=0`;
         window.open(urlString, '_blank');
     }
 
     function updateUrl(location, departure, returnVal, guests) {
         setUrl(prevUrl => ({
             location: location || prevUrl.location,
-            departure: departure || prevUrl.departure,
-            returnVal: returnVal || prevUrl.returnVal,
+            departure: (departure === "" ? "" : departure.split('/')[2] + '-' + departure.split('/')[0] + '-' + departure.split('/')[1]) || prevUrl.departure,
+            returnVal: (returnVal === "" ? "" : returnVal.split('/')[2] + '-' + returnVal.split('/')[0] + '-' + returnVal.split('/')[1]) || prevUrl.returnVal,
             guests: guests || prevUrl.guests
         }));
     }
@@ -125,7 +125,7 @@ const Hotel = () => {
                 <div className="flight-action-container">
                     <HotelFinder updateUrl={updateUrl} updateFrom={updateFrom} bool={true} hint={"Location"} class={"from-hotel"} widthBool={widthBool}/>
                     <input className="middle" placeholder="Departure" id="departure" ref={departureRef}>
-                    
+                    {console.log(url)}
                     </input>
                     <input className="middle" placeholder="Return" id="return" ref={returnRef}>
 
