@@ -569,6 +569,7 @@ input:focus {
     padding-right: 10px;
     margin-left: 0;
     cursor: pointer;
+    z-index: 500;
 }
 
 .dropdown-new-phone {
@@ -594,6 +595,7 @@ input:focus {
     padding-right: 10px;
     margin-left: 0;
     cursor: pointer;
+    z-index: 500;
 }
 
 .dropdown-new-new-phone {
