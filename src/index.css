@@ -338,7 +338,7 @@ body {
     column-gap: 2px;
 }
 
-.search-flights-new, .search-flights, .num-people, .from, .middle {
+.from-hotel, .search-flights-new, .search-flights, .num-people, .from, .middle {
     height: 60px;
     width: 15%;
     font-family: 'Poppins';
@@ -355,7 +355,7 @@ input:focus {
     outline: none;
 }
 
-.from {
+.from-hotel, .from {
     border-radius: 20px 0px 0px 20px;
     position: relative;
 }
@@ -637,4 +637,13 @@ input:focus {
     height: 500px;
     background-color: black;
     z-index: -4;
+}
+
+.from-hotel {
+    width: calc(30% + 2px);
+}
+
+.blocker {
+    height: 35px;
+    width: 100%;
 }

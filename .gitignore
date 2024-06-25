@@ -25,3 +25,6 @@ yarn-error.log*
 # video
 
 **/*.mp4
+
+**/cities.json
+**/airports.json
