@@ -103,7 +103,7 @@ const Flight = () => {
                     <AirportFinder updateUrl={updateUrl} updateFrom={updateFrom} bool={false} hint={"To"} class={"to-new"} widthBool={widthBool}/>
                     <div className="middle-new-container">
                         <input className="middle-item" placeholder="Departure" id="departure-new" ref={departureNewRef}>
-                        {console.log(url)}
+
                         </input>
                         <input className="middle-item" placeholder="Return" id="return-new" ref={returnNewRef}> 
 
@@ -122,7 +122,7 @@ const Flight = () => {
                     <AirportFinder updateUrl={updateUrl} updateFrom={updateFrom} bool={true} hint={"From"} class={"from"} widthBool={widthBool}/>
                     <AirportFinder updateUrl={updateUrl} updateFrom={updateFrom} bool={false} hint={"To"} class={"middle"} widthBool={widthBool}/>
                     <input className="middle" placeholder="Departure" id="departure" ref={departureRef}>
-                        {console.log(url)}
+
                     </input>
                     <input className="middle" placeholder="Return" id="return" ref={returnRef}>
 

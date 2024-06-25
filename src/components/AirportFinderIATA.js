@@ -79,13 +79,13 @@ const AirportFinder = (props) => {
             />
             {filteredAirports.length !== 0 && show ? <ul ref={dropdownRef} className={filteredAirports.length > 8 ? (props.widthBool ? "dropdown-new-phone" : "dropdown-new") : (props.widthBool ? "dropdown-new-new-phone" : "dropdown-new-new")}>
                 {filteredAirports.map((airport, index) => (
-                    <>  
-                        <div className="airport-item" key={index} onClick={() => {setQuery(airport.iata); setShow(false); checkUpdate(airport)}}>
+                    <div key={airport.iata}>  
+                        <div className="airport-item" onClick={() => {setQuery(airport.iata); setShow(false); checkUpdate(airport)}}>
                             {filterAirportWord(airport.name) }{(index + 1 !== filteredAirports.length)? <div className="bar-new"></div> : <></>}
                         </div>
                         
                         
-                    </>
+                    </div>
                 ))}
             </ul>: <></>}
         </>
