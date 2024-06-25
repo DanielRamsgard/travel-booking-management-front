@@ -15011,6 +15011,17 @@
         "size": "small"
     },
     {
+        "iata": "LGA",
+        "lon": "-73.873889",
+        "iso": "US",
+        "status": 1,
+        "name": "LaGuardia Airport",
+        "continent": "NA",
+        "type": "airport",
+        "lat": "40.776944",
+        "size": "large"
+    },
+    {
         "iata": "LCO",
         "lon": "14.533333",
         "iso": "CG",

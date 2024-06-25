@@ -45,18 +45,71 @@ const CustomCarousel = () => {
           }
       };
 
+      const places = [
+        {
+            img : "/static/media/peru.jpeg",
+            city : "Huacachina",
+            country : "Peru",
+            iata : "CUZ"
+        },
+        {
+            img : "/static/media/bali.jpeg",
+            city : "Bali",
+            country : "Indonesia",
+            iata : "DPS"
+        },
+        {
+            img : "/static/media/petra.jpeg",
+            city : "Petra",
+            country : "Jordan",
+            iata : "KBR"
+        },
+        {
+            img : "/static/media/ibiza.jpeg",
+            city : "Ibiza",
+            country : "Spain",
+            iata : "IBZ"
+        },
+        
+        {
+            img : "/static/media/dubai.jpeg",
+            city : "Dubai",
+            country : "UAE",
+            iata : "DXB"
+        },
+        {
+            img : "/static/media/hawaii.jpeg",
+            city : "Na Pali Coast",
+            country : "Hawaii",
+            iata : "LIH"
+        },
+        {
+            img : "/static/media/south.jpeg",
+            city : "Cape Town",
+            country : "South Africa",
+            iata : "CPT"
+        },
+        {
+            img : "/static/media/socotra.jpg",
+            city : "Socotra",
+            country : "Yemen",
+            iata : "SCT"
+        },
+        {
+            img : "/static/media/ams.jpg",
+            city : "Amsterdam",
+            country : "Netherlands",
+            iata : "AMS"
+        },
+      ]
+
       return (
         <>
             <div className="work">
                 <Carousel responsive={responsive} infinite={true} itemClass="contain">
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
+                    {places.map((item) => (
+                        <Card img={item.img} city={item.city} country={item.country}/>
+                    ))}
                 </Carousel>
             </div>
         </>

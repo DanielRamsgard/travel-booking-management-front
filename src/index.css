@@ -511,6 +511,7 @@ input:focus {
     justify-content: flex-start;
     width: 170px;
     height: 250px;
+    cursor: pointer;
 }
 
 .card-img {
@@ -564,6 +565,7 @@ input:focus {
     padding-left: 10px;
     padding-right: 10px;
     margin-left: 0;
+    cursor: pointer;
 }
 
 .dropdown-new-phone {
@@ -588,6 +590,7 @@ input:focus {
     padding-left: 10px;
     padding-right: 10px;
     margin-left: 0;
+    cursor: pointer;
 }
 
 .dropdown-new-new-phone {
