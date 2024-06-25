@@ -1,10 +1,17 @@
 import React from "react";
 
 const Card = (props) => {
+    const scrollToTop = () => {
+        window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+        });
+    };
+
     return (
         <>
             
-            <div className="card-container">
+            <div className="card-container" onClick={scrollToTop}>
                 <div className="card-img-container">
                     <img alt="Card" className="card-img" src={props.img}></img>
                 </div>

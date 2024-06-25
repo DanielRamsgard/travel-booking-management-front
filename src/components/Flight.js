@@ -119,7 +119,7 @@ const Flight = () => {
                     </div>
                 </div>
             </div>
-            <CustomCarousel />
+            <CustomCarousel/>
         </>
     );
 }
