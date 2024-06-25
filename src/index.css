@@ -602,7 +602,7 @@ input:focus {
     top: 125px;
 }
 
-.dropdown-new {
+.dropdown-new-phone, .dropdown-new {
     justify-content: flex-start;
     overflow: auto;
     height: 325px;
