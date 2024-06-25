@@ -348,6 +348,7 @@ body {
     position: relative;
     padding-left: 20px;
     font-size: large;
+    cursor: pointer;
 }
 
 input:focus {
@@ -372,7 +373,8 @@ input:focus {
     padding-left: 0px;
     border-radius: 20px 20px 20px 20px;
     margin-left: 8px;
-    z-index: -1;
+    z-index: 100;
+    cursor: pointer;
 }
 
 .flight-action-container-new {
@@ -412,6 +414,7 @@ input:focus {
     margin-top: 8px;
     width: 90%;
     margin-left: 0px;
+    cursor: pointer;
 }
 
 .middle-new-container {

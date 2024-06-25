@@ -23,12 +23,17 @@ const Flight = () => {
         
     });
 
+    const toAvia = () => {
+        const urlString = `https://www.aviasales.com/search/${url.from}${url.departure}${url.to}${url.returnVal}${url.passengers}?request_source=search_form`;
+        window.open(urlString, '_blank');
+    }
+
     function updateUrl(from, to, departure, returnVal, passengers) {
         setUrl(prevUrl => ({
             from: from || prevUrl.from,
             to: to || prevUrl.to,
-            departure: (departure === "" ? "" : departure.split('/')[0] + departure.split('/')[1]) || prevUrl.departure,
-            returnVal: (returnVal === "" ? "" : returnVal.split('/')[0] + returnVal.split('/')[1]) || prevUrl.returnVal,
+            departure: (departure === "" ? "" : departure.split('/')[1] + departure.split('/')[0]) || prevUrl.departure,
+            returnVal: (returnVal === "" ? "" : returnVal.split('/')[1] + returnVal.split('/')[0]) || prevUrl.returnVal,
             passengers: passengers || prevUrl.passengers
         }));
     }
@@ -113,7 +118,7 @@ const Flight = () => {
                     <input className="num-people-new" placeholder="Passengers" onChange={(e) => {updateUrl("","","","",e.target.value)}}>
 
                     </input>
-                    <div className="search-flights-new">
+                    <div className="search-flights-new" onClick={toAvia}>
                         Search flights
                     </div>
                 </div>
@@ -130,7 +135,7 @@ const Flight = () => {
                     <input className="num-people" placeholder="Passengers" onChange={(e) => {updateUrl("","","","",e.target.value)}}>
 
                     </input>
-                    <div className="search-flights">
+                    <div className="search-flights" onClick={toAvia}>
                         Search flights
                     </div>
                 </div>
