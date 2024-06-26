@@ -19,7 +19,7 @@ const About = (props) => {
     return (
         <>
             <Nav />
-            <video className="video-slide" src="/static/media/about.mp4" autoPlay muted loop></video>
+            <video className="video-slide" src="/static/media/sun.mp4" autoPlay muted loop></video>
             <div className="container" ref={scrollRef}>
                 <div className="about-container">
                     <div className="about-banner">
