@@ -67,6 +67,7 @@ body {
     color: black;
     transition: .3s ease;
     width: 100%;
+    cursor: pointer;
 }
 
 
