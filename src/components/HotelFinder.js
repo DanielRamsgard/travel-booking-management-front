@@ -30,7 +30,7 @@ const HotelFinder = (props) => {
             props.updateUrl("",query,"","","");
         }
         // Query the data locally
-        if (query.length > 2) {
+        if (query.length > 3) {
             const results = airports.filter(airport => {
                 const name = airport.name ? airport.name.toLowerCase() : '';
                 const searchQuery = query.toLowerCase();

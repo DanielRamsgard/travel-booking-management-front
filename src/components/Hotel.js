@@ -125,7 +125,7 @@ const Hotel = () => {
                 <div className="flight-action-container">
                     <HotelFinder updateUrl={updateUrl} updateFrom={updateFrom} bool={true} hint={"Location"} class={"from-hotel"} widthBool={widthBool}/>
                     <input className="middle" placeholder="Departure" id="departure" ref={departureRef}>
-                    {console.log(url)}
+                    
                     </input>
                     <input className="middle" placeholder="Return" id="return" ref={returnRef}>
 
