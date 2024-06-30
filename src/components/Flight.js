@@ -24,7 +24,7 @@ const Flight = () => {
     });
 
     const flightBackend = async () => {
-        const apiUrl = "http://127.0.0.1:5000/flight"; // Define your API URL here
+        const apiUrl = "https://jk6dgo11z8.execute-api.us-east-1.amazonaws.com/dev/flight"; // Define your API URL here
     
         const requestOptions = {
             method: 'POST', // or 'GET', 'PUT', 'DELETE', etc.
