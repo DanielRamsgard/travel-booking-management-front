@@ -194,6 +194,7 @@ body {
     font-style: none;
     font-size: larger;
     font-weight: 500;
+    cursor: pointer;
 }
 
 .tint-dark, .tint {
@@ -239,6 +240,12 @@ body {
    background-color: rgb(150,150,150); 
    transition: .3s ease;
    box-shadow: 0 0 2px rgba(150,150,150,.5);
+}
+
+.img-slide-container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
 }
 
 .video-slide {
@@ -399,6 +406,10 @@ input:focus {
     font-size: large;
 }
 
+.to-new {
+    border-radius: 0px 0px 0px 0px;
+}
+
 .middle-new-container {
     padding-left: 0px;
 }
@@ -430,6 +441,7 @@ input:focus {
 .middle-item {
     width: calc(50% - 1px);
     height: 60px;
+    border-radius: 0px 0px 0px 0px;
     background-color: white;
 }
 

@@ -1,6 +1,8 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const NavPage = (props) => {
+    const navigate = useNavigate();
 
     return (
         <div className="container-container">
@@ -12,21 +14,11 @@ const NavPage = (props) => {
                 </div>
             </div>
             <div className="navpage-container">
-                <a href="/" className="navpage-text" onClick={() => {props.updateNav(false)}}>
-                    Home
-                </a>
-                <a href="/flight"className="navpage-text" onClick={() => {props.updateNav(false)}}>
-                    Flights
-                </a>
-                <a href="/hotel" className="navpage-text" onClick={() => {props.updateNav(false)}}>
-                    Hotels
-                </a>
-                <a href="/about" className="navpage-text" onClick={() => {props.updateNav(false)}}>
-                    About
-                </a>
-                <a href="/contact" className="navpage-text" onClick={() => {props.updateNav(false)}}>
-                    Contact
-                </a>
+                <div onClick={() => {navigate("/")}} className="navpage-text"> Home <div className="bar"></div> </div>
+                <div onClick={() => {navigate("/flight")}} className="navpage-text"> Flights <div className="bar"></div> </div>
+                <div onClick={() => {navigate("/hotel")}} className="navpage-text"> Hotels <div className="bar"></div> </div>
+                <div onClick={() => {navigate("/about")}} className="navpage-text"> About <div className="bar"></div> </div>
+                <div onClick={() => {navigate("/contact")}} className="navpage-text"> Contact <div className="bar"></div> </div>
             </div>
         </div>
     );

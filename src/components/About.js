@@ -1,8 +1,10 @@
 import React, { useEffect, useRef } from "react";
 import Nav from "./Nav";
 import { useLocation } from 'react-router-dom';
+import useWindowWidth from "./useWindowWidth";
 
 const About = (props) => {
+    const widthBool = useWindowWidth(700);
     const scrollRef = useRef(null);
     const location = useLocation();
 
@@ -19,7 +21,16 @@ const About = (props) => {
     return (
         <>
             <Nav />
-            <video className="video-slide" src="/static/media/sun.mp4" autoPlay muted loop></video>
+            { widthBool ?
+            <>
+                <div className="tint-dark"></div>
+                <div className="img-slide-container">
+                    <img className="video-slide" alt="About" src="/static/media/about.png"></img>
+                </div>
+            </>
+            : 
+            <video className="video-slide" src="/static/media/sun.mp4" autoPlay muted loop playsinline></video>
+            }
             <div className="container" ref={scrollRef}>
                 <div className="about-container">
                     <div className="about-banner">

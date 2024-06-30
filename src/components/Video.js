@@ -38,7 +38,7 @@ const Video = (props) => {
             {(props.active === 5)&& (
                 <div className="video-animation"/>
             )}
-            <video className="video-slide" src={handleVideo()} autoPlay muted loop></video>
+            <video className="video-slide" src={handleVideo()} autoPlay muted loop playsinline></video>
             <div className={ props.active === 2 || props.active === 4 || props.active === -1 ? "tint-dark" : "tint"}/>
         </>
     );
