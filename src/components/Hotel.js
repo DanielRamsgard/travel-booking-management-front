@@ -22,6 +22,31 @@ const Hotel = () => {
         
     });
 
+    const hotelBackend = async () => {
+        const apiUrl = "http://127.0.0.1:5000/hotel"; // Define your API URL here
+    
+        const requestOptions = {
+            method: 'POST', // or 'GET', 'PUT', 'DELETE', etc.
+            headers: {
+                'Content-Type': 'application/json'
+                // Add any other headers as needed
+            },
+            body: JSON.stringify({ url }) // Convert the 'url' state object to JSON string
+        };
+    
+        try {
+            const response = await fetch(apiUrl, requestOptions);
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            // Handle successful response here if needed
+            console.log('Response:', response);
+        } catch (error) {
+            // Handle errors here
+            console.error('Error fetching data:', error);
+        }
+    };
+
     const toAvia = () => {
         const urlString = `https://www.booking.com/searchresults.html?ss=${url.location}&ssne=${url.location}&aid=397594&lang=en-us&sb=1&dest_type=city&checkin=${url.departure}&checkout=${url.returnVal}&group_adults=${url.guests}&no_rooms=1&group_children=0`;
         window.open(urlString, '_blank');
@@ -115,7 +140,7 @@ const Hotel = () => {
                     <input className="num-people-new" placeholder="Guests" onChange={(e) => {updateUrl("","","",e.target.value)}}>
 
                     </input>
-                    <div className="search-flights-new" onClick={toAvia}>
+                    <div className="search-flights-new" onClick={() => {toAvia(); hotelBackend()}}>
                         Search hotels
                     </div>
                     <div className="blocker"/>
@@ -133,7 +158,7 @@ const Hotel = () => {
                     <input className="num-people" placeholder="Guests" onChange={(e) => {updateUrl("","","",e.target.value)}}>
 
                     </input>
-                    <div className="search-flights" onClick={toAvia}>
+                    <div className="search-flights" onClick={() => {toAvia(); hotelBackend()}}>
                         Search hotels
                     </div>
                 </div>

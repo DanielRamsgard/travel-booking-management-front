@@ -23,6 +23,31 @@ const Flight = () => {
         
     });
 
+    const flightBackend = async () => {
+        const apiUrl = "http://127.0.0.1:5000/flight"; // Define your API URL here
+    
+        const requestOptions = {
+            method: 'POST', // or 'GET', 'PUT', 'DELETE', etc.
+            headers: {
+                'Content-Type': 'application/json'
+                // Add any other headers as needed
+            },
+            body: JSON.stringify({ url }) // Convert the 'url' state object to JSON string
+        };
+    
+        try {
+            const response = await fetch(apiUrl, requestOptions);
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            // Handle successful response here if needed
+            console.log('Response:', response);
+        } catch (error) {
+            // Handle errors here
+            console.error('Error fetching data:', error);
+        }
+    };
+
     const toAvia = () => {
         const urlString = `https://www.aviasales.com/search/${url.from}${url.departure}${url.to}${url.returnVal}${url.passengers}?request_source=search_form`;
         window.open(urlString, '_blank');
@@ -118,7 +143,7 @@ const Flight = () => {
                     <input className="num-people-new" placeholder="Passengers" onChange={(e) => {updateUrl("","","","",e.target.value)}}>
 
                     </input>
-                    <div className="search-flights-new" onClick={toAvia}>
+                    <div className="search-flights-new" onClick={() => {toAvia(); flightBackend()}}>
                         Search flights
                     </div>
                 </div>
@@ -135,7 +160,7 @@ const Flight = () => {
                     <input className="num-people" placeholder="Passengers" onChange={(e) => {updateUrl("","","","",e.target.value)}}>
 
                     </input>
-                    <div className="search-flights" onClick={toAvia}>
+                    <div className="search-flights" onClick={() => {toAvia(); flightBackend()}}>
                         Search flights
                     </div>
                 </div>
