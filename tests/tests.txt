@@ -1,0 +1,2 @@
+
+Please refer to separate React test files for unit testing.
