@@ -1,70 +1,54 @@
-# Getting Started with Create React App
+# Microservices Travel Booking Site
+Microservices Travel Booking Site is a robust application that provides up to 148,000 loctions and 6,700 airports to query for the latest travel booking flights and hotels. The application was built using Flask, React, MongoDB, AWS Lambda / API Gateway / S3 / CloudFront, and Railway. You may visit the site here: https://d38aezgot1todg.cloudfront.net/. 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Landing Page
+![imgOne](./media/imgOne.png)
+The background of this landing page are high-quality images of travel destinations. Users can navigate from thsi page to the rest of the site through the nav bar. 
 
-## Available Scripts
+## Landing Page Cont.
+![imgTwo](./media/imgTwo.png)
+This is another image of a second video. Users can navigate through the landing-page videos with the dots at the bottom of the page. 
 
-In the project directory, you can run:
+# Flight Booking
+## Querying Airports
+![imgThree](./media/imgThree.png)
+On this page, users can query the stored airports by name in order to find their desired flight. There is an easy-to-use dropdown for matching queries. When the user clicks search, they are brought to a new page with their inputted information already queried for them.
 
-### `npm start`
+## Return
+![imgFour](./media/imgFour.png)
+In the second input field, users can select a destination where they are going.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Datepicker
+![imgFive](./media/imgFive.png)
+Now users are able to select departure and return dates.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Datepicker
+![imgSix](./media/imgSix.png)
+Here is the completed input field.
 
-### `npm test`
+## Carousel
+![imgEight](./media/imgEight.png)
+Here users can see popular destinations available given their nearest airport location.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Hotel Booking
+![imgNine](./media/imgNine.png)
+This is a similar page for hotel booking with similar functionality. When the user clicks search, they are brought to a new page with their inputted information already queried for them.
 
-### `npm run build`
+## About
+![imgTen](./media/imgTen.png)
+Here is the about page.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Try it out
+If you'd like to run the site, you must install React. After installation, you may run it locally by performing the following steps:
+```sh
+# Clone the repository.
+git clone https://github.com/DanielRamsgard/travel-booking-management-front
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# Navigate to the project directory.
+cd travel-booking-management-front
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Run this command to view the site locally
+npm run start
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# The application runs on 'http://localhost'
+```
